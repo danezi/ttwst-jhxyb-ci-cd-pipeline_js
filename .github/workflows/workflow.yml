@@ -1,0 +1,11 @@
+name: CI workflow
+on:
+ push: # event as the first event that can trigger the workflow
+  branches: [main] #the workflow to start every time somebody pushes to the main branch
+ pull_request:  #event similar to the push event you just finished. It should be triggered whenever the user makes a pull request on the main branch.
+    branches: [ "main" ]  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: node:20-alpine   
